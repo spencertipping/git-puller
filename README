@@ -1,0 +1,3 @@
+Updates all of the Git repos in the current directory each time update-repos is run.
+This is useful when you have a webserver that needs to stay synchronized to your git
+repository.
