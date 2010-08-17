@@ -1,0 +1,11 @@
+#!/bin/bash
+# Git repository updater | Spencer Tipping
+# Run this from a cron job to update all repos on a regular basis.
+
+for file in *; do
+  [[ -d $file && -d $file/.git ]] || continue
+  pushd $file
+    echo Updating $file...
+    git pull
+  popd
+done
