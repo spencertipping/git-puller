@@ -5,7 +5,6 @@
 for file in *; do
   [[ -d $file && -d $file/.git ]] || continue
   pushd $file
-    echo Updating $file...
-    git pull
+    git pull >& /dev/null || echo "Failed to update $file"
   popd
 done
